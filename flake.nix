@@ -7,8 +7,8 @@
     
     outputs = { self, nixpkgs, ... }: {
         nixosConfigurations.erkan-nixos = nixpkgs.lib.nixosSystem {
-	    system = "x86_64-linux";
-	    modules = [ ./configuration.nix ];
-	};
+            system = "x86_64-linux";
+            modules = [ ./configuration.nix ];
+        };
     };
 }
