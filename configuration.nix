@@ -18,7 +18,7 @@
   networking.networkmanager.enable = true;
 
   # Enables flakes and nix-command
-  nix.settings.experimental-features  = ["nix-command" "flakes"];
+  nix.settings.experimental-features  = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -83,7 +83,7 @@
   # Enables zsh and Oh-my-zsh
   programs.zsh = {
       enable = true;
-      oh-my-zsh = {
+      ohMyZsh = {
       	enable = true;
 	    theme = "robbyrussell";
       };
@@ -118,23 +118,26 @@
      wget
      brave  	# Browser
      neovim 	# Text Editor
-     git 	# Vertison Control
+     git 	    # Vertison Control
      waybar 	# Hyprland Bar
-     rofi 	# Application Launcher
+     rofi 	    # Application Launcher
      ghostty	# Terminal
      swww	# Wallpaper
      wl-clipboard # Clipboard functionality
-     zsh	# Terminal Shell
-     gh 	# Github CLI
-     tmux 	# Terminal multiplexer
-     zip
-     unzip
+     zsh	    # Terminal Shell
+     gh 	    # Github CLI
+     tmux 	    # Terminal multiplexer
+     zip        # Zip folder
+     unzip      # Unzip zip files
+     gcc        # C/C++ compiler
+     python3    # Python3 
   ];
 
   programs.neovim = {
      defaultEditor = true;
      viAlias = true;
      vimAlias = true;
+     withPython3 = true;
   };
 
   # Enable the OpenSSH daemon.
