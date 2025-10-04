@@ -1,5 +1,4 @@
 # NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -13,16 +12,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "erkan-nixos"; # Define your hostname.
+  # Define your hostname.
+  networking.hostName = "erkan-nixos";
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Enables flakes and nix-command
   nix.settings.experimental-features  = [ "nix-command" "flakes" ];
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Set your time zone.
   time.timeZone = "America/Indiana/Indianapolis";
@@ -51,12 +47,6 @@
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.wayland.compositor = "weston";
 
-  # Configure keymap in X11
-  #services.xserver.xkb = {
-  #  layout = "se";
-  #  variant = "";
-  #};
-
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
@@ -72,10 +62,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
 
   # Enables Hyprland
   programs.hyprland.enable = true;
@@ -112,25 +98,26 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile. 
+  # To search, run: nix search <package name>
   environment.systemPackages = with pkgs; [
      wget
-     brave  	# Browser
-     neovim 	# Text Editor
-     git 	    # Vertison Control
-     waybar 	# Hyprland Bar
-     rofi 	    # Application Launcher
-     ghostty	# Terminal
-     swww	# Wallpaper
-     wl-clipboard # Clipboard functionality
-     zsh	    # Terminal Shell
-     gh 	    # Github CLI
-     tmux 	    # Terminal multiplexer
      zip        # Zip folder
      unzip      # Unzip zip files
      gcc        # C/C++ compiler
      python3    # Python3 
+     git 	    # Vertison Control
+     wl-clipboard # Clipboard functionality
+     zsh	    # Terminal Shell
+     gh 	    # Github CLI
+
+     brave  	# Browser
+     neovim 	# Text Editor
+     waybar 	# Hyprland Bar
+     rofi 	    # Application Launcher
+     ghostty	# Terminal
+     swww	# Wallpaper
+     tmux 	    # Terminal multiplexer
   ];
 
   programs.neovim = {
@@ -142,12 +129,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   system.stateVersion = "25.05"; # Did you read the comment?
