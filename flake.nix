@@ -16,12 +16,15 @@
             modules = [ 
                 ./configuration.nix 
                 
-                home-manager = {
-                    useGlobalPkgs = true;
-                    useUserPackages = true;
-                    users.erkanperkan = import ./home-manager.nix;
-                    backUpFileExtenstion = "backup";
-                };
+                home-manager.nixosModules.home-manager
+                {
+                    home-manager = {
+                        useGlobalPkgs = true;
+                        useUserPackages = true;
+                        users.erkanperkan = import ./home-manager.nix;
+                        backupFileExtension = "backup";
+                    };
+                }
             ];
         };
     };

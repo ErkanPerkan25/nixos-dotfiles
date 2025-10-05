@@ -105,11 +105,11 @@
      zip        # Zip folder
      unzip      # Unzip zip files
      gcc        # C/C++ compiler
-     python3    # Python3 
      git 	    # Vertison Control
      wl-clipboard # Clipboard functionality
      zsh	    # Terminal Shell
      gh 	    # Github CLI
+     nodejs     # NodeJS
 
      brave  	# Browser
      neovim 	# Text Editor

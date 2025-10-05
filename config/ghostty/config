@@ -1,0 +1,14 @@
+# This is the configuration file for Ghostty.
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+# Config syntax crash course
+# ==========================
+#font-family = JetBrains Mono
+font-size = 13
+theme = Rose Pine
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+background-opacity = 0.8
+background = #000000
+background-blur = true
