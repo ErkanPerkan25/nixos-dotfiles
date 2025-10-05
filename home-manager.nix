@@ -25,7 +25,6 @@ in
     }) configs;
 
     home.packages = with pkgs; [
-        neovim
         ripgrep
         nil
         nixpkgs-fmt
@@ -34,5 +33,18 @@ in
         lua-language-server
         fd
         fzf
+
+        brave  	    # Browser
+        waybar 	    # Hyprland Bar
+        rofi 	    # Application Launcher
+        ghostty	    # Terminal
+        swww	    # Wallpaper
+        tmux 	    # Terminal multiplexer
     ];
+
+    programs.neovim = {
+        enable = true;
+        viAlias = true;
+        vimAlias = true;
+    };
 }

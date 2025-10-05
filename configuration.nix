@@ -109,23 +109,8 @@
      wl-clipboard # Clipboard functionality
      zsh	    # Terminal Shell
      gh 	    # Github CLI
-     nodejs     # NodeJS
-
-     brave  	# Browser
      neovim 	# Text Editor
-     waybar 	# Hyprland Bar
-     rofi 	    # Application Launcher
-     ghostty	# Terminal
-     swww	# Wallpaper
-     tmux 	    # Terminal multiplexer
   ];
-
-  programs.neovim = {
-     defaultEditor = true;
-     viAlias = true;
-     vimAlias = true;
-     withPython3 = true;
-  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
