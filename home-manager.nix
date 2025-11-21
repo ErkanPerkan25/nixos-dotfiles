@@ -25,21 +25,27 @@ in
     }) configs;
 
     home.packages = with pkgs; [
+        # Tools, Compilers, and more ...
         ripgrep
         nil
         nixpkgs-fmt
         nodejs
+        cargo
         gcc
         lua-language-server
         fd
         fzf
 
+        # Programs ...
         brave  	    # Browser
         waybar 	    # Hyprland Bar
         rofi 	    # Application Launcher
         ghostty	    # Terminal
         swww	    # Wallpaper
         tmux 	    # Terminal multiplexer
+        pcmanfm     # File Manager
+        blueman     # Bluetooth Manager
+        spotify     # Spotify
     ];
 
     programs.neovim = {

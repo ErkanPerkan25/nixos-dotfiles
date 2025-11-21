@@ -3,9 +3,9 @@
 # all available config options and their default values.
 # Config syntax crash course
 # ==========================
-#font-family = JetBrains Mono
+font-family = RobotoMono Nerd Font
 font-size = 13
-theme = Rose Pine
+#theme = Gruvbox Dark
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = true

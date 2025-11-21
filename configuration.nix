@@ -92,6 +92,9 @@
     ];
   };
 
+  # Bluetooth
+  hardware.bluetooth.enable = true; 
+
   # Install firefox.
   programs.firefox.enable = true;
 

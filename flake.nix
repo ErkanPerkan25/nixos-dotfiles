@@ -7,7 +7,6 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        # flake-parts.url = "github:hercules-ci/flake-parts";
     };
     
     outputs = inputs@{ self, nixpkgs, home-manager, ... }: {

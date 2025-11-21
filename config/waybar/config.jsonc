@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "modules-left": ["custom/archicon","hyprland/workspaces", "hyprland/submap"],
+    "modules-left": ["custom/nixosicon","hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["clock"],
     "modules-right": ["memory", "custom/separator", "pulseaudio", "custom/separator","network","custom/separator","disk","custom/separator","battery"],
     "spacing": 4,
-    "custom/archicon": {
+    "custom/nixosicon": {
        "format": " ",
        "on-click": "rofi -show drun",
        "tooltip": false
@@ -41,7 +41,7 @@
         },
         "persistent-workspaces": {
             "*": [
-                1,2,3
+                1
             ]    
         },
         "sort-by-number": true
