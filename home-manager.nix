@@ -35,6 +35,7 @@ in
         lua-language-server
         fd
         fzf
+        neofetch
 
         # Programs ...
         brave  	    # Browser
