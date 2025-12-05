@@ -114,6 +114,7 @@
         gh 	        # Github CLI
         neovim 	    # Text Editor
         fastfetch   # Fastfetch for system info
+        bash        # Bash
 
     ];
 

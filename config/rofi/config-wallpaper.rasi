@@ -59,7 +59,7 @@ entry {
 
 listview {
     enabled:                     true;
-    columns:                     5; /* Number of elements in a row */
+    columns:                     4; /* Number of elements in a row */
     lines:                       1; /* One row */
     padding:                     26px 36px;
     cycle:                       true;
