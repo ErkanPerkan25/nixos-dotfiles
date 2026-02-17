@@ -5,6 +5,7 @@ let
     create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
     configs = {
     	nvim = "nvim";
+        dunst = "dunst";
         waybar = "waybar";
         rofi = "rofi";
         ghostty = "ghostty";
@@ -42,6 +43,7 @@ in
         waybar 	    # Hyprland Bar
         rofi 	    # Application Launcher
         ghostty	    # Terminal
+        kitty       # Terminal
         swww	    # Wallpaper
         tmux 	    # Terminal multiplexer
         pcmanfm     # File Manager

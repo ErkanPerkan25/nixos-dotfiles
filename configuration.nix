@@ -7,7 +7,6 @@
             /etc/nixos/hardware-configuration.nix
         ];
 
-
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -115,7 +114,9 @@
         neovim 	    # Text Editor
         fastfetch   # Fastfetch for system info
         bash        # Bash
-
+        dunst       # Dunst (notifications)
+        nwg-look    # Tool theme picking for GTK
+        feh         # Image viewer
     ];
 
     # Enable the OpenSSH daemon.
