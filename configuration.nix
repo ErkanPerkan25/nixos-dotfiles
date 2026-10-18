@@ -36,15 +36,9 @@
         LC_TIME = "sv_SE.UTF-8";
     };
 
-    # Enable the Wayland windowing system.
-    #services.wayland.enable = true;
-
-    # Enable the SDDM Environment for login screen
-    services.displayManager.sddm = {
-  	    enable = true;
-    };
-    services.displayManager.sddm.wayland.enable = true;
-    services.displayManager.sddm.wayland.compositor = "weston";
+    services.xserver.enable = true;
+    services.displayManager.sddm.enable = true;
+    services.displayManager.defaultSession = "hyprland";
 
     # Configure console keymap
     console.keyMap = "sv-latin1";
@@ -117,10 +111,12 @@
         dunst       # Dunst (notifications)
         nwg-look    # Tool theme picking for GTK
         feh         # Image viewer
+        gnumake     # Make
+        pcmanfm     # PCMan file manager
     ];
 
     # Enable the OpenSSH daemon.
     # services.openssh.enable = true;
     # This value determines the NixOS release from which the default
-    system.stateVersion = "25.05"; # Did you read the comment?
+    system.stateVersion = "26.05"; # Did you read the comment?
 }

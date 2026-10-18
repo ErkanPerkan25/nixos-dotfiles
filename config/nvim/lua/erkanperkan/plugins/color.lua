@@ -1,9 +1,8 @@
 function ColorMyTheme(color)
     color = color or "rose-pine-moon"
     vim.cmd.colorscheme(color)
-
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    --vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 return {
@@ -12,54 +11,47 @@ return {
         name = "rose-pine",
         config = function()
             require('rose-pine').setup({
-                disable_background = true,
+                disable_background = false,
                 styles = {
                     italic = false,
                 },
             })
 
-            --ColorMyTheme();
+            ColorMyTheme();
         end
     },
+
     {
-        "ellisonleao/gruvbox.nvim",
-        name = "gruvbox",
-        config = function()
-            require("gruvbox").setup({
-                terminal_colors = true, -- add neovim terminal colors
-                undercurl = true,
-                underline = false,
-                bold = true,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
-                },
-                strikethrough = true,
-                invert_selection = false,
-                invert_signs = false,
-                invert_tabline = false,
-                invert_intend_guides = false,
-                inverse = true, -- invert background for search, diffs, statuslines and errors
-                contrast = "", -- can be "hard", "soft" or empty string
-                palette_overrides = {},
-                overrides = {},
-                dim_inactive = false,
-                transparent_mode = false,
+        'Mofiqul/dracula.nvim',
+        name="dracula",
+        config = function ()
+            require("dracula").setup({
             })
 
-            ColorMyTheme("gruvbox")
-        end,
+            ColorMyTheme("dracula")
+        end
     },
+
     {
          "folke/tokyonight.nvim",
-        name = "tokyonight",
         lazy = false,
         opts = {},
         config = function()
-            -- ColorMyTheme()
+            --ColorMyTheme("tokyonight")
         end
-    }
+    },
+
+
+    {
+      'sainnhe/gruvbox-material',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.g.gruvbox_material_transparent_background = 0
+        vim.g.gruvbox_material_background = "medium"
+        vim.g.gruvbox_material_foreground = "original"
+        vim.cmd.colorscheme('gruvbox-material')
+        --ColorMyTheme("gruvbox-material")
+      end
+    },
 }

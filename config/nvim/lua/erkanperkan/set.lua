@@ -17,7 +17,6 @@ vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
-
 -- Visual Settings
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"

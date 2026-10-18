@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 wallpaperDirectory="$HOME/Pictures/wallpapers"
 SCRIPTS_DIR="$HOME/.config/hypr/scripts"
@@ -11,7 +11,7 @@ FPS=60
 TYPE="any"
 DURATION=2
 BEZIER=".43,1.9,1,.4"
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
+AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 # Retrive files
 mapfile -d '' PICS < <(find "$wallpaperDirectory" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
@@ -43,7 +43,7 @@ menu() {
 }
 
 ### initiate swww if not running
-swww query || swww-daemon --format xrgb
+awww query || awww-daemon --format xrgb
 
 
 # Choice the wallpaper
@@ -62,7 +62,7 @@ main(){
 
     # Random choice case
     if [[ "$selectedWall" == "$RANDOM_PIC_NAME" ]]; then
-        swww img -o "$focused_monitor" "$RANDOM_PIC" $SWWW_PARAMS
+        awww img -o "$focused_monitor" "$RANDOM_PIC" $SWWW_PARAMS
         sleep 0.5
         #"$SCRIPTSDIR/WallustSwww.sh"
         sleep 0.2
@@ -80,11 +80,11 @@ main(){
         fi
     done
 
-    if [[ $pic_index -ne -i ]]; then
-        swww img -o "$focused_monitor" "${PICS[$pic_index]}" $SWWW_PARAMS
+    if [[ $pic_index -ne -1 ]]; then
+        awww img -o "$focused_monitor" "${PICS[$pic_index]}" $SWWW_PARAMS
     else
         echo "Image not found."
-        exit 0
+        exit 1
     fi
 
 }

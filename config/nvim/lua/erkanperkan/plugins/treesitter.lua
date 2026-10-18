@@ -1,45 +1,38 @@
-return{
+return {
     {
         "nvim-treesitter/nvim-treesitter",
-        branch = "master",
+        branch="main",
+        lazy = false,
         build = ":TSUpdate",
         config = function ()
-            require("nvim-treesitter.configs").setup({
+            require("nvim-treesitter").setup({
                 ensure_installed = {
                     "vimdoc", "javascript", "typescript", "c", "lua", "rust",
                     "jsdoc", "bash", "query"
                 },
 
-                sync_install = false,
-
-                auto_install = true,
-
-                indent = {
-                    enable = true,
-                },
-
-                highlights = {
-                    enable = true,
-                    additional_vim_regex_highlighting = true,
-                },
+                -- main branch no longer auto-enables highlighting/indent via setup(),
+                -- so we do it ourselves per-filetype.
+                vim.api.nvim_create_autocmd("FileType", {
+                    pattern = {
+                        "vimdoc", "javascript", "typescript", "c", "lua", "rust",
+                        "javascriptreact", "typescriptreact", "bash",
+                    },
+                    callback = function()
+                        -- pcall in case a parser isn't installed yet
+                        vim.treesitter.start()
+                        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    end,
+                })
             })
 
-            local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-            treesitter_parser_config.templ = {
-                install_info = {
-                    url = "https://github.com/vrischmann/tree-sitter-templ.git",
-                    files = {"src/parser.c", "src/scanner.c"},
-                    branch = "master",
-                },
-            }
-
-            vim.treesitter.language.register("templ", "templ")
         end
     },
 
     {
         "nvim-treesitter/nvim-treesitter-context",
-        after = "nvim-treesitter",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()
             require'treesitter-context'.setup{
                 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)

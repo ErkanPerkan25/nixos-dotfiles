@@ -17,12 +17,12 @@ in
     home.username = "erkanperkan";
     home.homeDirectory = "/home/erkanperkan";
     programs.git.enable = true;
-    home.stateVersion = "25.05";
+    home.stateVersion = "26.05";
 
 
     xdg.configFile = builtins.mapAttrs (name: subpath:{
     	source = create_symlink "${dotfiles}/${subpath}";
-	recursive = true;
+	    recursive = true;
     }) configs;
 
     home.packages = with pkgs; [
@@ -36,7 +36,7 @@ in
         lua-language-server
         fd
         fzf
-        neofetch
+        luaPackages.tree-sitter-cli
 
         # Programs ...
         brave  	    # Browser
@@ -44,16 +44,18 @@ in
         rofi 	    # Application Launcher
         ghostty	    # Terminal
         kitty       # Terminal
-        swww	    # Wallpaper
+        awww	    # Wallpaper
         tmux 	    # Terminal multiplexer
         pcmanfm     # File Manager
         blueman     # Bluetooth Manager
         spotify     # Spotify
+        fuzzel      # Fuzzel
     ];
 
     programs.neovim = {
         enable = true;
         viAlias = true;
         vimAlias = true;
+        sideloadInitLua = true;
     };
 }

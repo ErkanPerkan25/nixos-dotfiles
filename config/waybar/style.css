@@ -1,12 +1,12 @@
 /* Style for status bar (Waybar)*/
 * {
     font-size: 14px;
-    font-family: "UbuntuMono Nerd Font Regular", monospace;
+    font-family: "JetBrainsMono Nerd Font NL", "JetBrainsMono Nerd Font", monospace;
     color: #e0def4;
     min-height: 0;
     border-radius: 0;
     border: none;
-    padding: 0.2rem;
+    padding: 0.14rem;
 }
 
 window#waybar{
@@ -44,3 +44,7 @@ window#waybar.hidden{
     color: red;
 }
 
+#custom-spotify{
+    margin-left: 8rem;
+
+}

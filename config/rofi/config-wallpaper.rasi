@@ -31,9 +31,9 @@ window {
     location:                    center;
     anchor:                      center;
     width:                       75%;
-    background-color:            #0000001a;
-    border:                      2px;
-    border-color:                rgba(0, 0, 0, 0.3);
+    background-color:            rgba(0,0,0,0.5);
+    border:                      5px;
+    border-color:                rgba(0, 0, 0, 0.4);
 }
 
 mainbox {
@@ -84,7 +84,7 @@ element {
     padding:                     5px 10px;
     border-radius:               10px;
     cursor:                      pointer;
-    background-color:            #00000000;
+    background-color:            rgba(0,0,0,0.8);
 }
 
 element normal.normal {
@@ -128,5 +128,6 @@ element-icon {
 element-text {
     cursor:                      inherit;
     background-color:            transparent;
+    text-color:                  rgba(255,255,255, 1);
     padding-left:                10px; /* Add padding to the left of the text */
 }

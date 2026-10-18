@@ -1,11 +1,22 @@
 {
     "layer": "top",
-    "modules-left": ["custom/archicon","hyprland/workspaces", "hyprland/submap"],
+    "modules-left": ["custom/archicon","hyprland/workspaces",  "hyprland/submap", "custom/spotify"],
     "modules-center": ["clock"],
     "modules-right": ["wlr/taskbar","cpu", "memory","pulseaudio", "network","disk","battery"],
-    "spacing": 10,
+    "spacing": 5,
+    "custom/spotify": {
+        "format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 50,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "killall spotify",
+        "on-scroll-up" : "playerctl -p spotify next",
+        "on-scroll-down" : "playerctl -p spotify previous",
+        "exec": "/usr/bin/python3 /home/erkan/.config/waybar/mediaplayer.py 2> /dev/null" 
+    },
     "custom/archicon": {
-       "format": " ",
+       "format": " ",
        "on-click": "rofi -show drun",
        "tooltip": false
      },
@@ -39,7 +50,7 @@
         "max-length": 10
     },
     "hyprland/workspaces": {
-        "format": "{id} {icon}",
+        "format": "{id}: {icon}",
         "format-icons": {
             "active": " ",
             "default": " "
@@ -53,11 +64,11 @@
     },
    "network": {
         "format": "{ifname}",
-        "format-wifi": "  {essid} - {bandwidthTotalBytes} ",
+        "format-wifi": "  Online - {bandwidthTotalBytes} ",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗 ",
-        "format-disconnected": "", //An empty format will hide the module.
+        "format-disconnected": "Offline", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+        "tooltip-format-wifi": "WiFi: {essid}, IP-addr: {ipaddr} ({signalStrength}%)  ",
         "tooltip-format-ethernet": "{ifname}  ",
         "tooltip-format-disconnected": "Disconnected",
         "interval": 10
@@ -75,7 +86,7 @@
         "design-capacity": false
     },
     "clock": {
-        "format": "{:%d. %b  %H:%M}",
+        "format": "{:%d.%b - %H:%M}",
         "timezone": "America/Indiana/Indianapolis"
     },
     "memory" : {
