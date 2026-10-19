@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SCRIPTDIR="$HOME/.config/hypr/scripts"
 USEER_SCRIPT_DIR="$HOME/.config/hypr/userScripts"

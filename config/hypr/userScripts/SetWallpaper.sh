@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 wallpaperDirectory="$HOME/Pictures/wallpapers"
 SCRIPTS_DIR="$HOME/.config/hypr/scripts"
