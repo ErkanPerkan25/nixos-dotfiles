@@ -1,10 +1,11 @@
 # NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, ... }:
+{pkgs, inputs, ... }:
 
 {
     imports =
         [   # Include the results of the hardware scan.
             /etc/nixos/hardware-configuration.nix
+            inputs.silentSDDM.nixosModules.default
         ];
 
     # Bootloader.
@@ -38,6 +39,12 @@
 
     services.xserver.enable = true;
     services.displayManager.sddm.enable = true;
+
+    programs.silentSDDM = {
+        enable = true;
+        theme = "catppuccin-mocha";
+    };
+
     services.displayManager.defaultSession = "hyprland";
 
     # Configure console keymap

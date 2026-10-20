@@ -9,6 +9,7 @@ let
         waybar = "waybar";
         rofi = "rofi";
         ghostty = "ghostty";
+        kitty = "kitty";
         hypr = "hypr";
     };
 in
